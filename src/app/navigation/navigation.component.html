@@ -1,0 +1,34 @@
+<div class="wrapper">
+  <div id="toggle" class="toggle container" [ngClass]="{'show' : menuToggled}" (click)="toggleMenu()">
+    <span class="line top"></span>
+    <span class="line middle"></span>
+    <span class="line bottom"></span>
+  </div>
+  <div class="logo" [ngClass]="{'show' : menuToggled}">
+    <img style="width: 2.5em;" src="../../assets/images/WarrenLogo.svg" alt="LOGO">
+  </div>
+  <div class="overlay" [ngClass]="{'show' : menuToggled}">
+    <nav [ngClass]="{'show' : menuToggled}">
+      <ul class="menu" [ngClass]="{'show' : menuToggled}">
+        <a pageScroll [pageScrollDuration]="500" href="#home">
+          <li class="menu-item" [ngClass]="{'show' : menuToggled}">HOME</li>
+        </a>
+        <a pageScroll [pageScrollDuration]="500" href="#bio">
+          <li class="menu-item" [ngClass]="{'show' : menuToggled}">BIO</li>
+        </a>
+        <a pageScroll [pageScrollDuration]="500" href="#synopsis">
+          <li class="menu-item" [ngClass]="{'show' : menuToggled}">WHAT I DO</li>
+        </a>
+        <a pageScroll [pageScrollDuration]="500" href="#skills">
+          <li class="menu-item" [ngClass]="{'show' : menuToggled}">SKILLS</li>
+        </a>
+        <a pageScroll [pageScrollDuration]="500" href="#experience">
+          <li class="menu-item" [ngClass]="{'show' : menuToggled}">EXPERIENCE</li>
+        </a>
+        <a pageScroll [pageScrollDuration]="500" href="#contact">
+          <li class="menu-item" [ngClass]="{'show' : menuToggled}">CONTACT</li>
+        </a>
+      </ul>
+    </nav>
+  </div>
+</div>

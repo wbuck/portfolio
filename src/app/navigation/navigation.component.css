@@ -1,0 +1,153 @@
+:host {
+    font-size: 1em;
+}
+
+a {
+    text-decoration: none;
+}
+
+.wrapper {
+    height: 60px;
+    background-color: #262626;
+    max-width: 2560px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    position: fixed;
+    z-index: 200;
+
+}
+
+.toggle {
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    height: 27px;
+    width: 30px;
+    z-index: 101;
+    display: none;
+    transition: opacity .25s ease;
+}
+
+#toggle .line {
+    background-color: #ee5450;
+    border: none;
+    border-radius: 30px;
+    width: 100%;
+    height: 3px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all .35s ease;
+}
+
+#toggle .line.middle {
+    top: 10px;
+}
+
+#toggle .line.bottom {
+    top: 20px;
+}
+
+#toggle.show .top {
+    transform: translateY(10px) translateX(0) rotate(45deg);
+}
+
+#toggle.show .middle {
+    opacity: 0;
+}
+
+#toggle.show .bottom {
+    transform: translateY(-10px) translateX(0) rotate(-45deg);
+}
+
+.menu {
+    overflow: hidden;
+    text-align: right;
+    margin: 0 130px 0 0;
+    font-size: 0.9em;
+    font-family: 'Lato-light',  sans-serif;  
+    transition: top 0.5s ease-in-out, margin-right 0.3s ease-in-out;
+}
+
+nav ul li {
+    display: inline-block;
+    color: #eaf0f2;
+    padding: 20px;
+}
+
+nav ul li:hover {
+    color: #ee5450;
+}
+
+.logo {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    height: 60px;
+    margin-left: 130px;
+    z-index: 200;
+    transition: margin-left 0.3s ease-in-out; 
+}
+
+.overlay {
+    transition: all 0.5s ease;
+}
+
+@media screen and (max-width: 940px){
+    nav ul {
+        margin-right: 40px;
+    }
+
+    .logo {
+        margin-left: 40px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #toggle {
+        display: block;
+    }
+    .overlay.show {
+         position: fixed; 
+         height: 100%;
+         width: 100%;
+         z-index: 100;
+         background-color: #262626;
+    }
+    nav ul {
+        margin-right: 0;
+        padding: 0;
+    }
+
+    nav ul li {
+        display: none; 
+    }
+    nav ul li.show {
+        display: block;
+        padding: 20px;
+        width: 100%;
+    }
+    .wrapper {
+        background-color: transparent;
+        position: absolute;
+    }
+    .menu {
+        text-align: center;
+        top: -40px;
+    }
+    .menu.show {
+        position: relative;
+        top: 70px;
+    }
+    .logo {
+        position: fixed;
+        display: none;
+    }
+    .logo.show {
+        display: flex;
+    }
+    nav.show {
+        height: 100vh;
+    }
+}

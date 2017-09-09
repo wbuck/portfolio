@@ -1,0 +1,364 @@
+.grid-container {
+    height: auto;
+    background: url('../../assets/images/Lake.jpg') fixed no-repeat;
+    background-size: cover;
+    display: grid;
+    padding: 4em;
+    grid-template-columns: 2fr 0.5fr 2fr;
+    grid-template-rows: 1fr 2fr 2fr 2fr 2fr 2fr 1fr;
+    grid-template-areas: "header . ." 
+                         "card1 line date1" 
+                         "date2 line card2" 
+                         "card3 line date3" 
+                         "date4 line card4" 
+                         ". line ." 
+                         "resume resume resume";
+}
+
+h2 {
+    font-family: 'lato', sans-serif;
+    font-weight: 400;
+    font-size: 2em;
+    color: #eaf0f2;
+    margin: 0;
+}
+
+h3 {
+    font-family: 'lato', sans-serif;
+    font-weight: 400;
+    font-size: 1.2em;
+    color: #eaf0f2;
+    margin: 0;
+}
+
+h4 {
+    font-family: 'lato', sans-serif;
+    font-weight: 300;
+    font-size: 1em;
+    color: #ee5450;
+    margin: 0.5em 0 0 0;
+}
+
+p {
+    font-family: 'lato', sans-serif;
+    font-weight: 400;
+    font-size: 1em;
+    line-height: 1.5em;
+    color: #eaf0f2;
+}
+
+.header {
+    grid-area: header;
+}
+
+.divider {
+    display: block;
+    background-color: #ee5450;
+    margin: 20px 0;
+    height: 3px;
+    width: 100px;
+}
+
+.circle {
+    background-color: #262626;
+    border-radius: 45px;
+    margin: 0 auto;
+    align-self: center;
+    padding: 1em;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.card1:hover~.circle1 {
+    background-color: #ee5450;
+}
+
+.card2:hover~.circle2 {
+    background-color: #ee5450;
+}
+
+.card3:hover~.circle3 {
+    background-color: #ee5450;
+}
+
+.card4:hover~.circle4 {
+    background-color: #ee5450;
+}
+
+.arrow-right {
+    width: 0;
+    height: 0;
+    border-top: 30px solid transparent;
+    border-bottom: 30px solid transparent;
+    border-left: 30px solid rgba(38, 38, 38, 0.9);
+}
+
+.arrow-left {
+    width: 0;
+    height: 0;
+    border-top: 30px solid transparent;
+    border-bottom: 30px solid transparent;
+    border-right: 30px solid rgba(38, 38, 38, 0.9);
+}
+
+.flex-container {
+    grid-area: line;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3em;
+}
+
+.line {
+    width: 4px;
+    height: 100%;
+    background-color: #ee5450;
+}
+
+.arrow-down {
+    width: 0;
+    height: 0;
+    border-top: 30px solid #ee5450;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+}
+
+.card1-arrow:hover~.circle1 {
+    background-color: #ee5450;
+}
+
+.card2-arrow:hover~.circle2 {
+    background-color: #ee5450;
+}
+
+.card3-arrow:hover~.circle3 {
+    background-color: #ee5450;
+}
+
+.card4-arrow:hover~.circle4 {
+    background-color: #ee5450;
+}
+
+.card1-arrow {
+    grid-column: 1;
+    grid-row: 2;
+    align-self: center;
+    justify-self: flex-end;
+}
+
+.card2-arrow {
+    grid-column: 3;
+    grid-row: 3;
+    align-self: center;
+    justify-self: flex-start;
+}
+
+.card3-arrow {
+    grid-column: 1;
+    grid-row: 4;
+    align-self: center;
+    justify-self: flex-end;
+}
+
+.card4-arrow {
+    grid-column: 3;
+    grid-row: 5;
+    align-self: center;
+    justify-self: flex-start;
+}
+
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+}
+
+.icon span {
+    display: block;
+    margin: 0 auto;
+    color: white;
+    font-size: 1.5em;
+}
+
+.circle1 {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.circle2 {
+    grid-column: 2;
+    grid-row: 3;
+}
+
+.circle3 {
+    grid-column: 2;
+    grid-row: 4;
+}
+
+.circle4 {
+    grid-column: 2;
+    grid-row: 5;
+}
+
+.date {
+    color: #eaf0f2;
+    font-family: 'lato', sans-serif;
+    font-weight: 400;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    align-self: center
+}
+
+.card {
+    background: rgba(38, 38, 38, 0.9);
+    border-radius: 10px;
+    padding: 1.5em;
+}
+
+.card1 {
+    grid-area: card1;
+    margin-right: 30px;
+}
+
+.date1 {
+    grid-area: date1;
+}
+
+.card2 {
+    grid-area: card2;
+    margin-left: 30px;
+}
+
+.date2 {
+    grid-area: date2;
+    justify-self: flex-end;
+}
+
+.card3 {
+    grid-area: card3;
+    margin-right: 30px;
+}
+
+.date3 {
+    grid-area: date3;
+}
+
+.card4 {
+    grid-area: card4;
+    margin-left: 30px;
+}
+
+.date4 {
+    grid-area: date4;
+    justify-self: flex-end;
+}
+
+a {
+    text-decoration: none;
+}
+
+.resume {
+    grid-area: resume;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70px;
+    margin: 1em;
+    border: 2px solid #756b5a;
+    background-color: #262626;
+    border-radius: 4px;
+    color: #eaf0f2;
+    font-family: 'lato', sans-serif;
+    font-weight: 400;
+    font-size: 1.2em;
+    width: 300px;
+    justify-self: center;
+}
+
+@media screen and (max-width: 1000px) {
+    .grid-container {
+        padding: 1em;
+        grid-gap: 1em;
+        grid-template-columns: 100fr;
+        grid-template-rows: 1fr 0.5fr 2fr 0.5fr 2fr 0.5fr 2fr 0.5fr 2fr 1fr 1fr;
+        grid-template-areas: "header" "bubble1" "card1" "bubble2" "card2" "bubble3" "card3" "bubble4" "card4" "line-space" "resume";
+    }
+
+    .flex-container {
+        grid-column: 1;
+        grid-row: 2 / span 9;
+    }
+    .card1-arrow,
+    .card2-arrow,
+    .card3-arrow,
+    .card4-arrow {
+        display: none;
+    }
+    .circle1 {
+        grid-area: bubble1;
+    }
+    .circle2 {
+        grid-area: bubble2;
+    }
+    .circle3 {
+        grid-area: bubble3;
+    }
+    .circle4 {
+        grid-area: bubble4;
+    }
+    .arrow-down {
+        grid-area: line-space;
+    }
+    .date {
+        align-self: flex-end;
+        justify-self: center;
+        font-size: 1em;
+        z-index: 20;
+        margin-bottom: 1em;
+        color: grey;
+    }
+    .date1 {
+        grid-area: card1;
+    }
+    .date2 {
+        grid-area: card2;
+    }
+    .date3 {
+        grid-area: card3;
+    }
+    .date4 {
+        grid-area: card4;
+    }
+    .card1 {
+        grid-area: card1;
+    }
+    .card2 {
+        grid-area: card2;
+    }
+    .card3 {
+        grid-area: card3;
+    }
+    .card4 {
+        grid-area: card4;
+    }
+    .card1,
+    .card2,
+    .card3,
+    .card4 {
+        margin: 0;
+        z-index: 10;
+    }
+    .header {
+        grid-area: header;
+        margin: 2em;
+    }
+    .circle {
+        margin: 0 auto;
+        padding: 0.3em;
+    }
+
+    .resume {
+        grid-area: resume;
+    }
+}

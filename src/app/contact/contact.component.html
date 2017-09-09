@@ -1,0 +1,36 @@
+<section id="contact">
+  <div class="header">
+    <h2>Contact</h2>
+    <span class="divider"></span>
+  </div>
+  <p>Have a project in mind? Or just want to say hello? <br/> Don’t hessitate to send a message!</p>
+  <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
+    <fieldset>
+      <div class="form-group">
+        <input type="text" [(ngModel)]="message.fullName" name="fullName" #fullNameVar="ngModel" placeholder="Name" required/>
+        <div class="error-msg" [hidden]="fullNameVar.valid || fullNameVar.pristine">
+          Full name is required
+        </div>
+      </div>
+      <div class="form-group">
+        <input type="email" [(ngModel)]="message.email" name="email" #emailVar="ngModel" placeholder="Email" ngModel email required/>
+        <div class="error-msg" [hidden]="emailVar.valid || emailVar.pristine">
+          Email address is required
+        </div>
+      </div>
+      <div class="form-group">
+        <input type="text" [(ngModel)]="message.subject" name="subject" #subjectVar="ngModel" placeholder="Subject" required/>
+        <div class="error-msg" [hidden]="subjectVar.valid || subjectVar.pristine">
+          A message subject is required
+        </div>
+      </div>
+      <div class="form-group">
+        <textarea rows="20" [(ngModel)]="message.message" name="message" #messageVar="ngModel" placeholder="Message" required></textarea>
+        <div class="error-msg" [hidden]="messageVar.valid || messageVar.pristine">
+          A message is required
+        </div>
+      </div>
+      <input type="submit" name="" value="Submit" [disabled]="!contactForm.form.valid" />
+    </fieldset>
+  </form>
+</section>
