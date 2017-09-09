@@ -9,7 +9,7 @@ function sendEmail(req, res) {
     service: 'Hotmail',
     auth: {
       user: 'wbuckley15@hotmail.com',
-      pass: 'reddawn26'
+      pass: '*******'
     }
   });
 
