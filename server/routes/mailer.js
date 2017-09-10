@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const config = require('../config/config');
 let nodemailer = require('nodemailer');
 
 function sendEmail(req, res) {
@@ -8,8 +9,8 @@ function sendEmail(req, res) {
   let transporter = nodemailer.createTransport({
     service: 'Hotmail',
     auth: {
-      user: 'wbuckley15@hotmail.com',
-      pass: '*******'
+      user: config.user,
+      pass: config.pass
     }
   });
 
