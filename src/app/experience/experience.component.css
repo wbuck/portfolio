@@ -275,6 +275,11 @@ a {
     width: 300px;
     justify-self: center;
 }
+@media screen and (max-width: 768px){
+    .grid-container {
+        background-attachment: scroll;
+    }
+}
 
 @media screen and (max-width: 1000px) {
     .grid-container {

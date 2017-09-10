@@ -44,6 +44,12 @@ h2.loaded {
     margin-right: 0;
 }
 
+@media screen and (max-width: 768px){
+    .flex-container {
+        background-attachment: scroll;
+    }
+}
+
 @media screen and (max-width: 500px) {
     img {
         margin: 2em;
