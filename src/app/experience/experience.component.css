@@ -281,9 +281,14 @@ a {
     transform: scale(1.1);
     box-shadow: 0 5px 10px black;
 }
-@media screen and (max-width: 768px){
+@media screen and (max-width: 768px) {
     .grid-container {
         background-attachment: scroll;
+    }
+
+    .resume:hover {
+        transform: none;
+        box-shadow: 0 0 0 black;
     }
 }
 
