@@ -1,18 +1,23 @@
 const express = require('express');
+const nodemailer = require('nodemailer');
+
 const router = express.Router();
-const config = require('../config/config');
-let nodemailer = require('nodemailer');
 
 function sendEmail(req, res) {
+
   const address = 'wbuckley15@hotmail.com';
   const message = req.body;
   let transporter = nodemailer.createTransport({
     service: 'Hotmail',
     auth: {
-      user: config.user,
-      pass: config.pass
+      user: process.env.USER_EMAIL,
+      pass: process.env.USER_PASSWORD
     }
   });
+
+  console.log('LOGGING MESSAGE WARREN');
+  console.log(process.env.USER_EMAIL);
+  console.log(process.env.USER_PASSWORD);
 
   let mailOptions = {
     from: address,
