@@ -4,8 +4,6 @@ const nodemailer = require('nodemailer');
 const router = express.Router();
 
 function sendEmail(req, res) {
-
-  const address = 'wbuckley15@hotmail.com';
   const message = req.body;
   let transporter = nodemailer.createTransport({
     service: 'Hotmail',
@@ -15,13 +13,9 @@ function sendEmail(req, res) {
     }
   });
 
-  console.log('LOGGING MESSAGE WARREN');
-  console.log(process.env.USER_EMAIL);
-  console.log(process.env.USER_PASSWORD);
-
   let mailOptions = {
-    from: address,
-    to: address,
+    from: process.env.USER_EMAIL,
+    to: process.env.USER_EMAIL,
     replyTo: message.email,
     subject: message.subject,
     text: message.message
@@ -29,6 +23,7 @@ function sendEmail(req, res) {
 
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
+      console.log(error);
       res.status(500).json({
         status: 500,
         data: null,
@@ -45,7 +40,12 @@ function sendEmail(req, res) {
 }
 
 router.post('/', (req, res) => {
-  sendEmail(req, res);
+  try {
+    sendEmail(req, res);
+  } catch (error) {
+    console.log(error);
+  }
+
 });
 
 module.exports = router;
