@@ -68,6 +68,7 @@ a {
     font-size: 0.9em;
     font-family: 'lato',  sans-serif;  
     font-weight: 300;
+    text-transform: uppercase;
     transition: top 0.5s ease-in-out, margin-right 0.3s ease-in-out;
 }
 
